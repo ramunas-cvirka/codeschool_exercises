@@ -1,0 +1,108 @@
+// Comments I
+.surveyor {
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+// fix later
+.surveyor h2 {
+  font-size: 18px;
+}
+// fix later
+.surveyor h2 a {
+  color: green;
+}
+
+// Comments II
+// Headers
+
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+}
+h2 {
+  font-size: 18px;
+}
+
+// Lists
+
+ol {
+  list-style: decimal;
+}
+ul {
+  list-style: disc;
+}
+
+
+// Imports
+@import 'settings';
+
+h1 {
+  color: $color-base;
+}
+
+
+// Nesting
+.surveyor {
+  border: 1px solid #ccc;
+  padding: 20px;
+  h2 {
+    font-size: 18px;
+    a {
+      color: green;
+    }
+  }
+}
+
+
+// Parent selector I
+.notice {
+  background: yellow;
+  border: 5px solid #000;
+  padding: 20px;
+  &.alert {
+    background: red;
+    box-shadow: 0 0 10px red;
+  }
+}
+
+
+// Parent selector II
+.notice {
+  background: yellow;
+  border: 5px solid #000;
+  padding: 20px;
+  a {
+    color: #222;
+    &:hover {
+      color: #313131;
+    }
+  }
+}
+
+
+// Parent selector III
+.surveyor {
+  border: 1px solid #ccc;
+  padding: 20px;
+  .factory & {
+    padding: 30px;
+  }
+}
+
+
+// Nesting pitfalls
+.notice {
+  background: yellow;
+  border: 5px solid #000;
+  padding: 20px;
+  &.alert {
+    background: red;
+    box-shadow: 0 0 10px red;
+  }
+  a {
+    color: #222;
+    &:hover {
+      color: #313131;
+    }
+  }
+}

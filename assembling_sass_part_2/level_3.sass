@@ -1,0 +1,84 @@
+// Helpers I
+@import "compass"
+
+@font-face
+  font-family: 'Rokkitt'
+  src: font-url('rokkitt.woff')
+
+
+// Helpers II
+@import "compass"
+
+.socket
+  background: #333
+  &:hover
+    background: scale-lightness(#333, -30%)
+
+
+// Helpers III
+@import "compass"
+$color-highlight: #e5e5e5
+
+.note
+  background: $color-highlight
+  padding: 10px
+  &.warning
+    background: scale-lightness($color-highlight, 20%)
+  &.error
+    background: scale-saturation( $color-highlight, 90%)
+
+
+// Helpers IV
+@import "compass"
+
+=borders($side, $style)
+  border-#{$side}: $style
+  border-#{opposite-position($side)}: $style
+
+.complex
+  +borders(left, 10px solid #ccc)
+
+
+// Utilities
+@import "compass"
+
+=button($color)
+  background-color: $color
+  color: contrast-color($color, #111, #eee, 50%)
+
+.btn-a
+  +button(#9fb2b0)
+.btn-b
+  +button(#e58e1a)
+.btn-c
+  +button(#322e2a)
+
+
+// Stretch
+@import 'compass/layout'
+
+.bio
+  position: relative
+  &:after
+    background: rgba(#000, 0.3)
+    content: ""
+    +stretch(10px, 5px, 10px, 5px)
+
+
+// Image dimensions
+@import "compass"
+
+.entry
+  background: image-url('arrow.png') right center no-repeat
+  line-height: image-height('arrow.png')
+  padding-right: image-width('arrow.png') + 10px
+
+
+// Inline data
+@import "compass"
+
+.entry
+  background: inline-image('arrow.png') right center no-repeat
+  line-height: image-height('arrow.png')
+  padding-right: image-width('arrow.png') + 10px
+

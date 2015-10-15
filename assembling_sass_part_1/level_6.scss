@@ -1,0 +1,128 @@
+// Arithmetic
+$gutter: 20px;
+
+.factory {
+  background: #fff;
+  margin-right: $gutter;
+  width: 600px - $gutter;
+}
+.highrise {
+  background: #797979;
+  margin-right: $gutter;
+  width: 300px - $gutter;
+}
+
+
+// Arithmetic II
+.sign {
+  font-size: 3.75em;
+  font-weight: bold;
+  padding: 20px 40px;
+  span {
+    font-size: (3.75em / 2);
+  }
+}
+
+
+// Arithmetic III
+$mur: 3.75em;
+
+.sign {
+  font-size: $mur;
+  font-weight: bold;
+  padding: 20px 40px;
+  span {
+    font-size: $mur / 2;
+  }
+}
+
+
+// Concatenation
+$theme: modern;
+$font: 'serif';
+
+@if $theme == modern {
+  $font: 'sans-' + $font;
+}
+
+.sign {
+  font-family: $font;
+}
+
+
+// Number functions I
+$size: 3.75em;
+
+.sign {
+  font-size: 3.75em;
+  font-weight: bold;
+  padding: 20px 40px;
+  span {
+    font-size: round($size / 2);
+  }
+}
+
+
+// Number functions II
+$context: 960px;
+
+.factory {
+  background: #fff;
+  width: percentage(600px / $context);
+}
+.highrise {
+  background: #797979;
+  width: percentage(300px / $context);
+}
+
+
+// Color shorthand
+$color-base: #797979;
+
+.modal {
+  background: rgba($color-base,0.75);
+  border: 1px solid $color-base;
+  padding: 20px;
+}
+
+
+// Color functions I
+$color-link: #3097b4;
+
+a {
+  color: $color-link;
+  text-decoration: underline;
+  &:hover {
+    color: lighten($color-link, 15%)
+  }
+}
+
+
+// Color functions II
+$color-link: #3097b4;
+
+a {
+  color: $color-link;
+  text-decoration: underline;
+  &:hover {
+    color: saturate(lighten($color-link, 15%), 20%);
+  }
+  &:active {
+    color: desaturate(darken($color-link, 15%), 25%);
+  }
+}
+
+
+// Color functions III
+$color-link: #3097b4;
+
+a {
+  color: $color-link;
+  text-decoration: underline;
+  &:hover {
+    color: invert($color-link);
+  }
+  &:active {
+    color: desaturate(darken($color-link, 15%), 25%);
+  }
+}

@@ -1,0 +1,93 @@
+// Extend I
+.blueprint {
+  background: blue;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  padding: 10px;
+}
+.surveyor {
+  @extend .blueprint;
+  color: #fff;
+}
+
+
+// Nested extend
+.notice {
+  background: yellow;
+  border: 5px solid #000;
+  padding: 20px;
+  &.alert {
+    background: red;
+    box-shadow: 0 0 10px red;
+  }
+  a {
+    color: #222;
+    &:hover {
+      color: #313131;
+    }
+  }
+}
+
+.error {
+  @extend .notice;
+}
+
+
+// Extend III
+.socket {
+  border-radius: 50%;
+  padding: 15px;
+  width: 30px;
+}
+
+.wrench {
+  @extend .socket;
+  width: 100px;
+}
+.bolt {
+  @extend .socket;
+  padding: 14px;
+}
+
+
+// Placeholder selector I
+%group {
+  zoom: 1;
+  &:before,
+  &:after {
+    content: '';
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.factory {
+  @extend %group;
+  background: #fff;
+}
+
+
+// Placeholde selector II
+%container {
+  background: blue;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  padding: 10px;
+}
+
+.blueprint {
+  @extend %container;
+}
+.surveyor {
+  @extend %container;
+  color: #fff;
+}
+
+.factory {
+  background: #fff;
+  .blueprint {
+    margin-bottom: 20px;
+  }
+}

@@ -1,0 +1,78 @@
+// Indented syntax I
+.surveyor
+  border: 1px solid #cccccc
+  padding: 20px
+  h2
+    font-size: 18px
+    a
+      color: green
+
+
+// Indented syntax II
+=assemble($side, $bg: #fff, $pad: 10px)
+  background: $bg
+  border-#{$side}: 1px solid #ccc
+  padding: $pad
+
+.factory
+  +assemble(left)
+.highrise
+  +assemble(right, #797979, 20px)
+
+
+// More lists I
+$surveyors: judy phillip
+$architects: william emily
+$crew: join($surveyors, $architects)
+
+@each $name in $crew
+  .team-#{$name}
+    background: url('../images/#{$name}.jpg')
+
+
+// More lists II
+$surveyors: judy phillip
+$architects: william emily
+$crew: join($surveyors, $architects)
+
+@each $name in $crew
+  .team-#{index($crew, $name)}
+    background: url('../images/#{$name}.jpg')
+
+
+// More lists III
+$styles: background #333, margin 20px, padding 10px
+
+.factory
+  @each $style in $styles
+    #{nth($style, 1)}: nth($style, 2)
+
+
+// More utilities I
+.socket
+  background: #333
+  &:hover
+    background: scale_color(#333, $lightness: -30%)
+
+
+// More utilities II
+$crew: judy phillip william emily
+
+.worksite
+  color: if(length($crew) < 5, green, red)
+
+
+// More utilities III
+%container
+  background: blue
+  border-radius: 5px
+  margin-bottom: 15px
+  padding: 10px
+  h1
+    color: yellow
+
+.blueprint
+  @extend %container
+.surveyor
+  @extend %container
+  color: #fff

@@ -1,0 +1,46 @@
+// Importing I
+@import 'compass'
+
+a
+  +transition(color 0.2s ease-in-out)
+  color: blue
+  &:hover,
+  &:focus
+    color: red
+
+
+// Importing II
+@import "compass"
+@import "compass/reset"
+
+
+// Mixins
+@import "compass"
+
+.socket
+  border-radius: 50%
+  height: 200px
+  width: 200px
+  &.is-active
+    +transform(rotate(45deg))
+
+
+// Gradients I
+@import "compass"
+
+.socket
+  +background(radial-gradient(center, #333, #222))
+  border-radius: 50%
+  height: 200px
+  width: 200px
+
+
+// Gradients II
+@import "compass"
+
+.socket
+  +background(linear-gradient(top, #333, #222))
+  border-radius: 50%
+  height: 200px
+  width: 200px
+

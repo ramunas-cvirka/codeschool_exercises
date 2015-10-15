@@ -1,0 +1,92 @@
+// Variables
+$bshade: #797979;
+
+.surveyor {
+  border: 1px solid $bshade;
+  padding: 20px;
+}
+.surveyor h2 {
+  color: $bshade;
+  font-size: 18px;
+}
+
+.notice {
+  background: yellow;
+  border: 5px solid $bshade;
+  padding: 10px;
+}
+
+
+// The default flag
+$pad: 10px !default;
+
+.modal {
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  padding: $pad;
+}
+.modal-title {
+  border-bottom: 1px solid #ccc;
+  font-size: 24px;
+  padding: $pad;
+}
+.modal-action {
+  background: purple;
+  display: block;
+  padding: $pad;
+}
+
+
+// Lists
+$modal-padding: 20px 10px 15px !default;
+
+.modal {
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  padding: $modal-padding;
+}
+.modal-title {
+  border-bottom: 1px solid #ccc;
+  font-size: 24px;
+  padding: $modal-padding;
+}
+.modal-action {
+  background: purple;
+  display: block;
+  padding: $modal-padding;
+}
+
+
+// Variable nesting
+$font-base: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+body {
+  background: #fff;
+  font: normal 16px/1.5 $font-base;
+  margin: 0;
+  padding: 0;
+}
+.blueprint {
+  font: bold 24px/1.3 Georgia, serif;
+  text-align: center;
+  span {
+    font-family: $font-base;
+  }
+}
+
+
+// Interpolation
+$l: left;
+
+.girder {
+  border-#{$l}: 4px solid #ccc;
+  h2 {
+    font-size: 24px;
+  }
+}
+.notice {
+  border-#{$l}: 8px solid #797979;
+  a {
+    color: #222;
+  }
+}

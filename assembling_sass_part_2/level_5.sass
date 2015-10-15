@@ -1,0 +1,52 @@
+// Automatic I
+@import "compass"
+@import "logos/*.png"
+
+
+// Automatic II
+@import "compass"
+@import "logos/*.png"
++all-logos-sprites
+
+
+// Sprite Map I
+@import "compass"
+$logos: sprite-map('logos/*.png')
+
+
+// Sprite Map II
+@import "compass"
+$logos: sprite-map("logos/*.png")
+
+.logo
+  display: block
+  text-indent: -9999px
+  background: $logos
+
+
+// Sprite Dimensions
+@import "compass"
+$logos: sprite-map("logos/*.png")
+
+.logo
+  background: $logos
+  display: block
+  text-indent: -9999px
+  +sprite-dimensions($logos, logo)
+
+
+// Sprite Position
+@import "compass"
+$logos: sprite-map("logos/*.png")
+
+.logo
+  background: $logos sprite-position($logos, logo)
+  display: block
+  text-indent: -9999px
+  +sprite-dimensions($logos, logo)
+  &:hover
+    background-position: sprite-position($logos, hover)
+  &:active
+    background-position: sprite-position($logos, active)
+
+

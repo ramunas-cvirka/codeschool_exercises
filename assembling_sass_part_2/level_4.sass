@@ -1,0 +1,179 @@
+// Setup
+@import "compass"
+$base-font-size: 16px
+$base-line-height: 24px
++establish-baseline
+
+
+// Font size
+@import "compass"
+
+$base-font-size: 16px
+$base-line-height: 24px
++establish-baseline
+
+h1
+  +adjust-font-size-to(48px)
+
+h2
+  +adjust-font-size-to(24px)
+
+p
+  +adjust-font-size-to(19px)
+
+
+// Margins
+@import "compass"
+
+$base-font-size: 16px
+$base-line-height: 24px
++establish-baseline
+
+h1
+  +adjust-font-size-to(48px)
+
+h2
+  +adjust-font-size-to(24px)
+
+p
+  +adjust-font-size-to(19px)
+
+ul
+  +trailer(1)
+
+li
+  +leader(0.5)
+  +trailer(0.5)
+
+
+// Leading
+@import "compass"
+
+$base-font-size: 16px
+$base-line-height: 24px
++establish-baseline
+
+h1
+  +adjust-font-size-to(48px)
+  +adjust-leading-to(4, 48px)
+
+h2
+  +adjust-font-size-to(24px)
+
+p
+  +adjust-font-size-to(19px)
+
+ul
+  +trailer(1)
+
+li
+  +leader(0.5)
+  +trailer(0.5)
+
+
+// Calculations
+@import "compass"
+
+$base-font-size: 16px
+$base-line-height: 24px
++establish-baseline
+
+h1
+  +adjust-font-size-to(48px)
+  +adjust-leading-to(4, 48px)
+
+h2
+  +adjust-font-size-to(24px)
+
+p
+  +adjust-font-size-to(19px)
+  +trailer(1, 19px)
+
+ul
+  +trailer(1)
+
+li
+  +leader(0.5)
+  +trailer(0.5)
+
+
+// Rhythm
+@import "compass"
+
+$base-font-size: 16px
+$base-line-height: 24px
++establish-baseline
+
+h1
+  +adjust-font-size-to(48px)
+  +adjust-leading-to(4, 48px)
+
+h2
+  +adjust-font-size-to(24px)
+
+p
+  +adjust-font-size-to(19px)
+  +trailer(1, 19px)
+
+ul
+  +trailer(1)
+
+li
+  +rhythm(0.5, 0.5, 0.5, 0.5)
+
+
+// Borders I
+@import "compass"
+
+$base-font-size: 16px
+$base-line-height: 24px
++establish-baseline
+
+h1
+  +adjust-font-size-to(48px)
+  +adjust-leading-to(4, 48px)
+
+h2
+  +adjust-font-size-to(24px)
+  +leading-border(2px, 1, 24px)
+  border-color: #C5BDAF
+
+p
+  +adjust-font-size-to(19px)
+  +trailer(1, 19px)
+
+ul
+  +trailer(1)
+
+li
+  +rhythm(0.5, 0.5, 0.5, 0.5)
+
+
+// Borders II
+@import "compass"
+
+$base-font-size: 16px
+$base-line-height: 24px
++establish-baseline
+
+h1
+  +adjust-font-size-to(48px)
+  +adjust-leading-to(4, 48px)
+
+h2
+  +adjust-font-size-to(24px)
+  +leading-border(2px, 1, 24px)
+  border-color: #C5BDAF
+
+p
+  +adjust-font-size-to(19px)
+  +trailer(1, 19px)
+  +rhythm-borders(2px, 1, 19px)
+  border-color: #C5BDAF
+
+ul
+  +trailer(1)
+
+li
+  +rhythm(0.5, 0.5, 0.5, 0.5)
+

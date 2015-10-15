@@ -1,0 +1,77 @@
+// Functions
+@function aspect($width) {
+  @return $width * 9 / 16;
+}
+
+.intro {
+  background: #000;
+  width: 500px;
+  height: aspect(500px);
+}
+
+
+// If
+$size: 18px;
+
+.switch {
+  font-size: $size;
+  @if $size <= 16px {
+    font-family: Arial, sans-serif;
+  } @else {
+    font-family: Helvetica, sans-serif;
+  }
+}
+
+
+// Else if
+$size: 18px;
+
+.switch {
+  font-size: $size;
+  @if $size <= 16px {
+    font-family: Arial, sans-serif;
+  } @else if $size <= 24px {
+    font-family: Georgia, sans-serif;
+  } @else {
+    font-family: Helvetica, sans-serif;
+  }
+}
+
+
+// Mixin' in
+@mixin family($size) {
+  font-size: $size;
+  @if $size <= 16px {
+    font-family: Arial, sans-serif;
+  } @else if $size <= 24px {
+    font-family: Georgia, serif;
+  } @else {
+    font-family: Helvetica, sans-serif;
+  }
+}
+
+.switch {
+  @include family(18px);
+}
+
+
+// Each
+$tools: socket, wrench, bolt;
+
+@each $tool in $tools {
+   .tool-#{$tool} {
+     background: url('#{$tool}.png') no-repeat;
+   }
+}
+
+
+// While
+$i: 1;
+
+@while $i <= 7 {
+  .row-#{$i} {
+    background: #ccc;
+    height: $i * 10px;
+  }
+  $i: $i + 2;
+}

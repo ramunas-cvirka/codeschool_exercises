@@ -1,0 +1,85 @@
+// Nested media queries
+.factory {
+  width: 100%;
+  @media (min-width: 960px) {
+    width: percentage(600px / 960px);
+  }
+}
+
+
+// Respond-to I
+@mixin respond-to($media) {
+  @if $media == desktop {
+    @media (min-width: 960px) {
+      @content;
+    }
+  } @else if $media == tablet {
+    @media (min-width: 768px) {
+      @content;
+    }
+  }
+}
+
+.factory {
+  width: 100%;
+  @include respond-to(desktop) {
+    width: percentage(600px / 960px);
+  }
+  @include respond-to(tablet) {
+    width: 50%;
+  }
+}
+
+
+// Respond-to II
+@mixin respond-to($query) {
+  @media (min-width: $query) {
+    @content;
+  }
+}
+
+.factory {
+  width: 100%;
+  @include respond-to(960px) {
+    width: percentage(600px / 960px);
+  }
+  @include respond-to(768px) {
+    width: 50%;
+  }
+}
+
+
+// Respond-to III
+@mixin respond-to($type, $query) {
+  @media ($type: $query) {
+    @content;
+  }
+}
+
+.factory {
+  width: 100%;
+  @include respond-to(min-width, 960px) {
+    width: percentage(600px / 960px);
+  }
+  @include respond-to(max-width, 768px) {
+    width: 50%;
+  }
+}
+
+
+// Respond-to IV
+@mixin respond-to($type: min-width, $query: 960px) {
+  @media ($type: $query) {
+    @content;
+  }
+}
+
+.factory {
+  width: 100%;
+  @include respond-to {
+    width: percentage(600px / 960px);
+  }
+  @include respond-to(max-width, 768px) {
+    width: 50%;
+  }
+}

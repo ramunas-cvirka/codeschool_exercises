@@ -1,0 +1,99 @@
+// Include
+@mixin assemble {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.factory {
+  @include assemble;
+}
+.highrise {
+  @include assemble;
+}
+
+
+// Argument
+@mixin assemble($bg) {
+  background: $bg;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.factory {
+  @include assemble(#fff);
+}
+.highrise {
+  @include assemble(#797979);
+}
+
+
+// Default argument
+@mixin assemble($bg: #fff) {
+  background: $bg;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.factory {
+  @include assemble;
+}
+.highrise {
+  @include assemble(#797979);
+}
+
+
+// Multiple arguments
+@mixin assemble($bg: #fff, $pad: 10px) {
+  background: $bg;
+  border: 1px solid #ccc;
+  padding: $pad;
+}
+
+.factory {
+  @include assemble;
+}
+.highrise {
+  @include assemble(#797979, 20px);
+}
+
+
+// Keyword arguments
+@mixin assemble($bg: #fff, $pad: 10px) {
+  background: $bg;
+  border: 1px solid #ccc;
+  padding: $pad;
+}
+
+.factory {
+  @include assemble;
+}
+.highrise {
+  @include assemble($bg: #797979, $pad: 20px);
+}
+
+
+// Interpolating arguments
+@mixin assemble($side, $bg: #fff, $pad: 10px) {
+  background: $bg;
+  border-#{$side}: 1px solid #ccc;
+  padding: $pad;
+}
+
+.factory {
+  @include assemble(left);
+}
+.highrise {
+  @include assemble($side: left, $bg: #797979, $pad: 20px);
+}
+
+
+// Variable arguments
+@mixin modal($shadow...) {
+  box-shadow: $shadow;
+  border: 1px solid #ccc;
+}
+
+.modal {
+  @include modal(inset 0 0 5px #000, 0 2px 5px #000);
+}
